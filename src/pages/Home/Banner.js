@@ -1,20 +1,23 @@
 import React from "react";
 import chair from "../../assets/images/chair.png";
+import PrimaryButton from "../Shared/PrimaryButton";
 function Banner() {
   return (
-    <div className="hero min-h-screen px-12">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <img src={chair} className="max-w-sm rounded-lg shadow-2xl" />
+    <div className="hero min-h-screen">
+      <div className="hero-content flex-col lg:flex-row-reverse p-0">
+        <img
+          src={chair}
+          className="max-w-sm rounded-lg shadow-2xl"
+        />
         <div>
           <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>
           <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+            With the passage of time, dentistry has expanded and there have been
+            availability of specialist doctors in various departments. Currently
+            in each department of this center like Dental Implants, Orthodontic
+            Treatment, Cosmetic Dentistry
           </p>
-          <button className="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary">
-            Get Started
-          </button>
+          <PrimaryButton btnName="Get Started" />
         </div>
       </div>
     </div>
