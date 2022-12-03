@@ -1,0 +1,79 @@
+[
+  {
+    "_id": 1,
+    "name": "Teeth Orthodontics",
+    "slots": [
+      "08.00 AM-08.30 AM",
+      "08.30 AM-09.00 AM",
+      "09.00 AM-09.30 AM",
+      "09.30 AM-10.00 AM",
+      "10.00 AM-10.30 AM",
+      "10.30 AM-11.00 AM"
+    ]
+  },
+  {
+    "_id": 2,
+    "name": "Cosmetic Dentistry",
+    "slots": [
+      "08.00 AM-08.30 AM",
+      "08.30 AM-09.00 AM",
+      "09.00 AM-09.30 AM",
+      "09.30 AM-10.00 AM",
+      "10.00 AM-10.30 AM",
+      "10.30 AM-11.00 AM"
+    ]
+  },
+  {
+    "_id": 3,
+    "name": "Pediatric Dentist",
+    "slots": [
+      "08.00 AM-08.30 AM",
+      "08.30 AM-09.00 AM",
+      "09.00 AM-09.30 AM",
+      "09.30 AM-10.00 AM",
+      "10.00 AM-10.30 AM",
+      "10.30 AM-11.00 AM"
+    ]
+  },
+  {
+    "_id": 4,
+    "name": "Root Canal Specialist",
+    "slots": [
+      "08.00 AM-08.30 AM",
+      "08.30 AM-09.00 AM",
+      "09.00 AM-09.30 AM",
+      "09.30 AM-10.00 AM",
+      "10.00 AM-10.30 AM",
+      "10.30 AM-11.00 AM"
+    ]
+  },
+  {
+    "_id": 5,
+    "name": "Teeth Surgeon",
+    "slots": []
+  },
+  {
+    "_id": 6,
+    "name": "Oral Surgeon",
+    "slots": [
+      "08.00 AM-08.30 AM",
+      "08.30 AM-09.00 AM",
+      "09.00 AM-09.30 AM",
+      "09.30 AM-10.00 AM",
+      "10.00 AM-10.30 AM",
+      "10.30 AM-11.00 AM"
+    ]
+  },
+  {
+    "_id": 7,
+    "name": "Prosthodontist",
+    "slots": [
+      "08.00 AM-08.30 AM",
+      "08.30 AM-09.00 AM",
+      "09.00 AM-09.30 AM",
+      "09.30 AM-10.00 AM",
+      "10.00 AM-10.30 AM",
+      "10.30 AM-11.00 AM"
+    ]
+  }
+]
