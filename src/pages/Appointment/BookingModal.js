@@ -1,7 +1,14 @@
+import { format } from "date-fns";
 import React from "react";
 
-function BookingModal({ treatment }) {
-  const { name, slots } = treatment;
+function BookingModal({ date, treatment, setTreatment }) {
+  const { _id, name, slots } = treatment;
+
+  const handleBooking = (event) => {
+    event.preventDefault();
+    console.log(_id, name, event.target.slot.value);
+    setTreatment(null);
+  };
   return (
     <div>
       <input type="checkbox" id="booking-modal" className="modal-toggle" />
@@ -18,25 +25,40 @@ function BookingModal({ treatment }) {
             Booking for {name}
           </h3>
           <p className="py-4">
-            <form className="grid grid-cols-1 gap-3 justify-items-center">
+            <form
+              onSubmit={handleBooking}
+              className="grid grid-cols-1 gap-3 justify-items-center"
+            >
               <input
                 type="text"
-                placeholder="Type here"
+                disabled
+                value={format(date, "PP")}
+                className="input input-bordered w-full max-w-xs"
+              />
+              <select
+                name="slot"
+                className="select select-bordered w-full max-w-xs"
+              >
+                {slots.map((slot) => (
+                  <option value={slot}>{slot}</option>
+                ))}
+              </select>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
                 className="input input-bordered w-full max-w-xs"
               />
               <input
                 type="text"
-                placeholder="Type here"
+                name="email"
+                placeholder="Your Email"
                 className="input input-bordered w-full max-w-xs"
               />
               <input
                 type="text"
-                placeholder="Type here"
-                className="input input-bordered w-full max-w-xs"
-              />
-              <input
-                type="text"
-                placeholder="Type here"
+                name="phone"
+                placeholder="Your Phone"
                 className="input input-bordered w-full max-w-xs"
               />
               <input
@@ -46,11 +68,6 @@ function BookingModal({ treatment }) {
               />
             </form>
           </p>
-          <div className="modal-action">
-            <label htmlFor="booking-modal" className="btn">
-              Yay!
-            </label>
-          </div>
         </div>
       </div>
     </div>
