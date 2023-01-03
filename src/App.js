@@ -11,6 +11,7 @@ import Review from "./pages/Review/Review";
 import Navbar from "./pages/Shared/Navbar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Dashboard } from "./pages/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -24,6 +25,14 @@ function App() {
           element={
             <RequireAuth>
               <Appointment />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
             </RequireAuth>
           }
         />
