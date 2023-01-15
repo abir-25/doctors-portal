@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 
-const useToken = (user) => {
+const useToken = (email) => {
   const [token, setToken] = useState("");
-  console.log(user);
+
   useEffect(() => {
-    if (user) {
-      const email = user?.user?.email;
+    if (email) {
       const currentUser = { email: email };
 
       fetch(`http://localhost:5000/user/${email}`, {
@@ -16,9 +15,18 @@ const useToken = (user) => {
         body: JSON.stringify(currentUser),
       })
         .then((res) => res.json())
-        .then((data) => console.log("Inside useToken", data));
+        .then((data) => {
+          fetch(`http://localhost:5000/jwt?email=${email}`)
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.accessToken) {
+                localStorage.setItem("accessToken", data.accessToken);
+                setToken(data.accessToken);
+              }
+            });
+        });
     }
-  }, [user]);
+  }, [email]);
 
   return [token];
 };

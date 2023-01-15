@@ -20,7 +20,7 @@ export const Dashboard = () => {
             <Link to="/dashboard">My Appointments</Link>
           </li>
           <li>
-            <Link to="/dashboard/review">My Reviews</Link>
+            <Link to="/dashboard/allUsers">All Users</Link>
           </li>
         </ul>
       </div>

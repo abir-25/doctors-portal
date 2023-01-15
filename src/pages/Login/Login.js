@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   useSignInWithGoogle,
   useSignInWithEmailAndPassword,
@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { Loading } from "../Shared/Loading";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import useToken from "../../hooks/useToken";
 
 function Login() {
   const navigate = useNavigate();
@@ -22,14 +23,19 @@ function Login() {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [email, setEmail] = useState("");
 
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
+    setEmail(data.email);
   };
+  const [token] = useToken(email);
 
   useEffect(() => {
     if (user || gUser) {
-      navigate(from, { replace: true });
+      if (token) {
+        navigate(from, { replace: true });
+      }
     }
   }, [user, gUser, from, navigate]);
 

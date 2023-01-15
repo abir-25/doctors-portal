@@ -9,6 +9,9 @@ import { useForm } from "react-hook-form";
 import { Loading } from "../Shared/Loading";
 import { Link, useNavigate } from "react-router-dom";
 import useToken from "../../hooks/useToken";
+import { toast } from "react-toastify";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function Signup() {
   const navigate = useNavigate();
@@ -21,18 +24,20 @@ function Signup() {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  const [email, setEmail] = useState("");
 
-  const [token] = useToken(user || gUser);
+  const [token] = useToken(email);
 
   if (user || gUser) {
     if (token) {
-      navigate("/appointment");
+      navigate("/");
     }
   }
 
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
+    setEmail(data.email);
   };
 
   if (loading || gLoading || updating) {
