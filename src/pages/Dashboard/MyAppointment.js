@@ -22,19 +22,10 @@ const MyAppointment = () => {
       });
 
       const data = await res.json();
-      console.log(data);
       setAppointments(data);
       return data;
     },
   });
-
-  // useEffect(() => {
-  //   if (user) {
-  //     fetch(`http://localhost:5000/booking?patient=${user.email}`)
-  //       .then((res) => res.json())
-  //       .then((data) => setAppointments(data));
-  //   }
-  // }, [user]);
 
   return (
     <div>
