@@ -15,6 +15,7 @@ import { Dashboard } from "./pages/Dashboard/Dashboard";
 import MyAppointment from "./pages/Dashboard/MyAppointment";
 import AllUsers from "./pages/Dashboard/AllUsers";
 import AdminRoute from "./pages/Routes/AdminRoute/AdminRoute";
+import { AddDoctor } from "./pages/Dashboard/AddDoctor";
 
 function App() {
   return (
@@ -45,6 +46,14 @@ function App() {
             element={
               <AdminRoute>
                 <AllUsers />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path="addDoctor"
+            element={
+              <AdminRoute>
+                <AddDoctor />
               </AdminRoute>
             }
           />

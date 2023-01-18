@@ -33,9 +33,14 @@ export const Dashboard = () => {
             <Link to="/dashboard">My Appointments</Link>
           </li>
           {isAdmin === true ? (
-            <li>
-              <Link to="/dashboard/allUsers">All Users</Link>
-            </li>
+            <>
+              <li>
+                <Link to="/dashboard/allUsers">All Users</Link>
+              </li>
+              <li>
+                <Link to="/dashboard/addDoctor">Add Doctor</Link>
+              </li>
+            </>
           ) : (
             ""
           )}
