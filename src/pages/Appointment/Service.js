@@ -1,7 +1,7 @@
 import React from "react";
 
 function Service({ service, setTreatment }) {
-  const { name, slots } = service;
+  const { name, slots, price } = service;
   return (
     <div className="card lg:max-w-lg bg-base-100 shadow-xl">
       <div className="card-body text-center">
@@ -16,6 +16,7 @@ function Service({ service, setTreatment }) {
         <p>
           {slots.length} {slots.length > 0 ? "Spaces" : "Space"} Available
         </p>
+        <p className="small">price: ${price}</p>
         <div className="card-actions justify-center mt-3">
           <label
             disabled={slots.length === 0}

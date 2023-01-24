@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 import { Loading } from "../Shared/Loading";
 
@@ -38,16 +39,27 @@ const MyAppointment = () => {
               <th>Date</th>
               <th>Slot</th>
               <th>Treatment</th>
+              <th>Payment</th>
             </tr>
           </thead>
           <tbody>
-            {appointments.map((a, index) => (
+            {appointments.map((booking, index) => (
               <tr>
                 <th>{index + 1}</th>
-                <td>{a.name}</td>
-                <td>{a.date}</td>
-                <td>{a.slot}</td>
-                <td>{a.treatment}</td>
+                <td>{booking.name}</td>
+                <td>{booking.date}</td>
+                <td>{booking.slot}</td>
+                <td>{booking.treatment}</td>
+                <td>
+                  {booking.price && !booking.paid && (
+                    <Link to={`/dashboard/payment/${booking._id}`}>
+                      <button className="btn btn-primary btn-sm">Pay</button>
+                    </Link>
+                  )}
+                  {booking.price && booking.paid && (
+                    <span className="text-success">Pai</span>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

@@ -17,6 +17,7 @@ import AllUsers from "./pages/Dashboard/AllUsers";
 import AdminRoute from "./pages/Routes/AdminRoute/AdminRoute";
 import { AddDoctor } from "./pages/Dashboard/AddDoctor";
 import ManageDoctors from "./pages/Dashboard/ManageDoctors";
+import Payment from "./pages/Dashboard/Payment";
 
 function App() {
   return (
@@ -65,6 +66,17 @@ function App() {
                 <ManageDoctors />
               </AdminRoute>
             }
+          />
+          <Route
+            path="payment/:id"
+            element={
+              <AdminRoute>
+                <Payment />
+              </AdminRoute>
+            }
+            // loader={({ params }) =>
+            //   fetch(`http://localhost:5000/bookings/${params.id}`)
+            // }
           />
         </Route>
         <Route path="/review" element={<Review />} />
