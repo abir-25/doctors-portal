@@ -39,6 +39,7 @@ const MyAppointment = () => {
               <th>Date</th>
               <th>Slot</th>
               <th>Treatment</th>
+              <th>Price</th>
               <th>Payment</th>
             </tr>
           </thead>
@@ -50,6 +51,7 @@ const MyAppointment = () => {
                 <td>{booking.date}</td>
                 <td>{booking.slot}</td>
                 <td>{booking.treatment}</td>
+                <td>{booking.price}</td>
                 <td>
                   {booking.price && !booking.paid && (
                     <Link to={`/dashboard/payment/${booking._id}`}>
