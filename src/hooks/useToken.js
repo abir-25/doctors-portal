@@ -7,7 +7,7 @@ const useToken = (email) => {
     if (email) {
       const currentUser = { email: email };
 
-      fetch(`http://localhost:5000/user/${email}`, {
+      fetch(`https://doctors-portal-server-seven-mu.vercel.app/user/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -16,7 +16,9 @@ const useToken = (email) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          fetch(`http://localhost:5000/jwt?email=${email}`)
+          fetch(
+            `https://doctors-portal-server-seven-mu.vercel.app/jwt?email=${email}`
+          )
             .then((res) => res.json())
             .then((data) => {
               if (data.accessToken) {

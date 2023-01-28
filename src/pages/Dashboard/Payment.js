@@ -11,7 +11,7 @@ const Payment = () => {
   const { id } = useParams();
   const [bookingData, setBookingData] = useState(null);
   useEffect(() => {
-    const url = `http://localhost:5000/bookings/${id}`;
+    const url = `https://doctors-portal-server-seven-mu.vercel.app/bookings/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setBookingData(data));
