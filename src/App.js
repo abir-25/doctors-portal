@@ -69,11 +69,7 @@ function App() {
           />
           <Route
             path="payment/:id"
-            element={
-              <AdminRoute>
-                <Payment />
-              </AdminRoute>
-            }
+            element={<Payment />}
             // loader={({ params }) =>
             //   fetch(`https://doctors-portal-server-seven-mu.vercel.app/bookings/${params.id}`)
             // }
