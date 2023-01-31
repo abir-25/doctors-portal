@@ -26,7 +26,7 @@ function BookingModal({ date, treatment, setTreatment, refetch }) {
       price,
     };
 
-    fetch("https://doctors-portal-server-seven-mu.vercel.app/booking", {
+    fetch("http://localhost:5000/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",

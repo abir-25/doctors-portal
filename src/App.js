@@ -71,7 +71,7 @@ function App() {
             path="payment/:id"
             element={<Payment />}
             // loader={({ params }) =>
-            //   fetch(`https://doctors-portal-server-seven-mu.vercel.app/bookings/${params.id}`)
+            //   fetch(`http://localhost:5000/bookings/${params.id}`)
             // }
           />
         </Route>

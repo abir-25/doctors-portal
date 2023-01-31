@@ -11,7 +11,7 @@ const MyAppointment = () => {
   const [appointments, setAppointments] = useState([]);
   const [user, loading] = useAuthState(auth);
 
-  const url = `https://doctors-portal-server-seven-mu.vercel.app/booking?patient=${user.email}`;
+  const url = `http://localhost:5000/booking?patient=${user.email}`;
 
   const { data: bookings = [] } = useQuery({
     queryKey: ["bookings", user?.email],
